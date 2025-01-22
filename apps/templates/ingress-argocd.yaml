@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: argocd.{{ Values.spec.host }}
+    - host: argocd.{{ .Values.spec.host }}
       http:
         paths:
           - path: /
