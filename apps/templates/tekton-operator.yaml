@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "-10"
 spec:
   destination:
     namespace: tekton-operator
@@ -14,10 +16,3 @@ spec:
     repoURL: https://kubebb.github.io/components
     chart: tekton-operator
     targetRevision: 0.64.0
----
-apiVersion: operator.tekton.dev/v1alpha1
-kind: TektonConfig
-metadata:
-  name: config
-spec:
-  profile: all
