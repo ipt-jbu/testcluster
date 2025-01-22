@@ -14,3 +14,9 @@ spec:
     chart: docker-registry
     repoURL: https://helm.twun.io
     targetRevision: 2.2.3
+    helm:
+      valuesObject:
+        ingress:
+          enabled: true
+          hosts:
+            - reg.{{ .Values.spec.host }}

@@ -1,3 +1,4 @@
 spec:
+  host: mycluster.local
   destination:
     server: https://kubernetes.default.svc
