@@ -19,4 +19,4 @@ spec:
         ingress:
           enabled: true
           hosts:
-            - reg.{{ .Values.spec.host }}
+            - reg.{{ .Values.host }}
