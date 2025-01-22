@@ -13,4 +13,4 @@ spec:
   source:
     chart: docker-registry
     repoURL: https://helm.twun.io
-    targetRevision: latest
+    targetRevision: 2.2.3
