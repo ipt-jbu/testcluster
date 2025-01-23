@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: vault
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    repoURL: https://helm.releases.hashicorp.com
+    chart: vault
+    targetRevision: 0.29.1
+    helm:
+      valuesObject:
+        server:
+          affinity: ""
+          ha:
+            enabled: true
+            raft:
+              enabled: true
+              setNodeId: true
+              config: |
+                cluster_name = "vault-integrated-storage"
+                storage "raft" {
+                   path    = "/vault/data/"
+                }
+                
+                listener "tcp" {
+                   address = "[::]:8200"
+                   cluster_address = "[::]:8201"
+                   tls_disable = "true"
+                }
+                service_registration "kubernetes" {}
