@@ -4,7 +4,7 @@ kind: SealedSecret
 metadata:
   creationTimestamp: null
   name: ngrok
-  namespace: ngrok
+  namespace: ngrok-operator
 spec:
   encryptedData:
     apikey: AgA1FCtd5AubCI9WhWtJcwU/FfERfW3OSkWfhv+hSNnIk/KBiEdOjt5y7dWOV7HN1UZwGd+1Ut6nSr2hcRWZpZcc94E5NoP4ZpEOR5B8d8JmdTqkjzP1uJD2I96y2kDKDEHuYAMntc8UfaRBexa088gQreJT/BysVHUxpUkgbiNcvwQsQYNZTuPm8FOMbX1aMl06YictuFxMMu3F4nbcaUp4VvR2EyXspj+DlUmFpxqy7iDlY4Hghm8LVMOzs4x3mPioTgvJaFPqNGM3s4YB+CJTcpGfNsyD4fDjOeQ1Af5ysSQUAW8fN9y4Z2XI/8i27S+extbsoO3v2gxgNoeXC5ObW/Aug3eKtMHp72iShPWqSsWiTn2Bs4dn3whrztBtJtiYlAweW5nBKMN8KBwSChNygDfagjIQOlUKmp0LZRRpfdSUTvcVDTEY3UwxSqfPSS5XJT6BtOnjVBK6ZBM/ra/JqEB7Gfd84GnYHfY4z9EB5H+quQ4zAVurV/bGWCqZHaQTgHDR8QCv0IzJwXfbF/LD4U5VLYUZsBtxlSeGPUCNEsKnJB6gy5tNXmALd+3GBMKOxVwzX5NllKHSnkG3BL733ZKxVsWC4cNddXuFP8JFQVsxdHLdDwAXWwhvWURM1fM15gdhaDyjb1dLePY7+6S9ks/XtL5SeEbZfsY4bIO8Bsp3dSK74sqFi3oNgZseTUIxLrxb0hBzIWuvTb+KSuRPvVUu7QzenhiyvPArghkpN/gcUfC+sADosziAgZSDLxgV
@@ -13,4 +13,4 @@ spec:
     metadata:
       creationTimestamp: null
       name: ngrok
-      namespace: ngrok
+      namespace: ngrok-operator
