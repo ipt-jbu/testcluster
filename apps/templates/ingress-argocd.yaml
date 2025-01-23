@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: ngrok
   rules:
-    - host: {{ .Values.argocd-subdomain }}.{{ .Values.host }}
+    - host: {{ .Values.argocd.subdomain }}.{{ .Values.host }}
       http:
         paths:
           - path: /
