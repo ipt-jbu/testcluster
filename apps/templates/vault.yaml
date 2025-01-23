@@ -39,6 +39,7 @@ spec:
                    path    = "/vault/data/"
                 }
                 
+                ui = true
                 listener "tcp" {
                    address = "[::]:8200"
                    cluster_address = "[::]:8201"
