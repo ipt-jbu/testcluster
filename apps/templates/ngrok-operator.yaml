@@ -7,9 +7,12 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: ngrok-operator
     server: {{ .Values.spec.destination.server }}
-  project: ngrok-operator
+    namespace: ngrok-operator
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
   source:
     repoURL: https://charts.ngrok.com
     chart: ngrok-operator
