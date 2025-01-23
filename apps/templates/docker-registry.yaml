@@ -7,16 +7,16 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: docker-registry
     server: {{ .Values.spec.destination.server }}
+    namespace: docker-registry
   project: default
   source:
-    chart: docker-registry
     repoURL: https://helm.twun.io
+    chart: docker-registry
     targetRevision: 2.2.3
     helm:
       valuesObject:
         ingress:
           enabled: true
           hosts:
-            - reg.{{ .Values.host }}
+            - {{ .Values.registry-subdomain }}.{{ .Values.host }}

@@ -1,5 +1,6 @@
-host: mycluster.local
-registry: reg.mycluster.local
+host: shrimp-golden-pony.ngrok-free.app
+argocd-subdomain: argocd
+registry-subdomain: reg
 spec:
   destination:
     server: https://kubernetes.default.svc
