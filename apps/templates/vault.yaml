@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.cluster.server }}
+    namespace: vault
+  project: default
+  source:
+    repoURL: https://helm.releases.hashicorp.com
+    chart: vault
+    targetRevision: 0.29.1
+    helm:
+      valuesObject:
+        global:
+          namespace: vault
+        server:
+          ingress:
+            enabled: true
+            hosts:
+              - host: {{ .Values.vault.subdomain }}.{{ .Values.host }}

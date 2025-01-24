@@ -1,4 +1,5 @@
 host: mycluster.local
 argocd: { subdomain: argocd }
 registry: { subdomain: reg }
+vault: { subdomain: vault }
 cluster: { server: https://kubernetes.default.svc }
