@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubernetes-dashboard
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: {{ .Values.cluster.server }}
+    namespace: kubernetes-dashboard
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  source:
+    repoURL: https://kubernetes.github.io/dashboard
+    chart: kubernetes-dashboard
+    targetRevision: 7.10.1
+    helm:
+      valuesObject:
+        settings:
+          ingress:
+            enabled: true
+            hosts:
+            - {{ .Values.kubernetes.subdomain }}.{{ .Values.host }}
+            useDefaultIngressClass: true

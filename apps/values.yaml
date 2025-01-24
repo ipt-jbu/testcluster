@@ -4,4 +4,5 @@ registry: { subdomain: reg }
 vault: { subdomain: vault }
 harbor: { subdomain: harbor }
 tekton: { subdomain: tekton }
+kubernetes: { subdomain: kube }
 cluster: { server: https://kubernetes.default.svc }

@@ -23,7 +23,7 @@ spec:
         externalURL: http://{{ .Values.harbor.subdomain }}.{{ .Values.host }}
         exposureType: ingress
         service:
-          type: NodePort
+          type: ClusterIP
         ingress:
           core:
             hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
