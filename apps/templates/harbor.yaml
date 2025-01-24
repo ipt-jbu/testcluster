@@ -14,7 +14,7 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
+    repoURL: oci://registry-1.docker.io/bitnamicharts
     chart: harbor
     targetRevision: 24.1.8
     helm:
