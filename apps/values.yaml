@@ -1,4 +1,4 @@
-host: shrimp-golden-pony.ngrok-free.app
+host: jbu.ngrok-free.app
 argocd: { subdomain: argocd }
 registry: { subdomain: reg }
 cluster: { server: https://kubernetes.default.svc }
