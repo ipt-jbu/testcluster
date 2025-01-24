@@ -9,8 +9,11 @@ metadata:
     argocd.argoproj.io/sync-wave: "-10"
 spec:
   destination:
-    namespace: tekton-operator
     server: {{ .Values.cluster.server }}
+    namespace: tekton-operator
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   project: tekton
   source:
     repoURL: https://kubebb.github.io/components
