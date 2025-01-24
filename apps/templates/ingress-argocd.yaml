@@ -4,9 +4,8 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
 spec:
-  ingressClassName: ngrok
   rules:
-    - host: {{ .Values.host }}
+    - host: {{ .Values.argocd.subdomain }}.{{ .Values.host }}
       http:
         paths:
           - path: /
