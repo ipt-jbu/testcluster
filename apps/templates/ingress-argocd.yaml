@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   name: argocd-server-ingress
   namespace: argocd
+  annotations:
+    k8s.ngrok.com/modules: ngrok-module-set
+    k8s.ngrok.com/domain: "*.{{ .Values.host }}"
 spec:
   ingressClassName: ngrok
   rules:
