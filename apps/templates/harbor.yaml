@@ -1,22 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: docker-registry
+  name: harbor
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: {{ .Values.cluster.server }}
-    namespace: docker-registry
+    namespace: harbor
   project: default
   source:
-    repoURL: https://helm.twun.io
-    chart: docker-registry
-    targetRevision: 2.2.3
+    repoURL: https://helm.goharbor.io
+    chart: harbor
+    targetRevision: 1.16.2
     helm:
       valuesObject:
         ingress:
-          enabled: true
-          hosts:
-            - {{ .Values.registry.subdomain }}.{{ .Values.host }}
+          expose:
+            ingress:
+              hosts:
+                core: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
