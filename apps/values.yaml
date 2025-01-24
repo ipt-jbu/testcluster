@@ -1,4 +1,4 @@
-host: jbu.ngrok-free.app
+host: properly-devoted-fowl.ngrok-free.app
 argocd: { subdomain: argocd }
 registry: { subdomain: reg }
 cluster: { server: https://kubernetes.default.svc }
