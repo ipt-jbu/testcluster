@@ -23,3 +23,11 @@ spec:
           ingress:
             hosts:
               core: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
+        core:
+          image:
+            repository: bitnami/harbor-core
+            tag: 2.12.2
+        portal:
+          image:
+            repository: bitnami/harbor-portal
+            tag: 2.12.2
