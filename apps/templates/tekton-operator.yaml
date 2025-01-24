@@ -14,7 +14,7 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-  project: tekton
+  project: default
   source:
     repoURL: https://kubebb.github.io/components
     chart: tekton-operator
