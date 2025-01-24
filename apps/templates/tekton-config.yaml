@@ -1,9 +1,10 @@
 apiVersion: operator.tekton.dev/v1alpha1
 kind: TektonConfig
 metadata:
-  name: tekton-config
+  name: config
   namespace: tekton-operator
   labels:
     app.kubernetes.io/instance: tekton-operator
 spec:
   profile: all
+  targetNamespace: tekton-pipelines
