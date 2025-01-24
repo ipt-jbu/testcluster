@@ -5,8 +5,6 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  annotations:
-    argocd.argoproj.io/sync-wave: "-10"
 spec:
   destination:
     server: {{ .Values.cluster.server }}
@@ -16,6 +14,6 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    repoURL: https://kubebb.github.io/components
-    chart: tekton-operator
-    targetRevision: 0.64.0
+    repoURL: https://github.com/tektoncd/operator.git
+    targetRevision: tags/v0.74.0
+    path: charts/tekton-operator
