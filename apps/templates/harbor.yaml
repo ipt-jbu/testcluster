@@ -27,3 +27,12 @@ spec:
         ingress:
           core:
             hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
+        core:
+          resourcesPreset: nano
+        jobservice:
+          resourcesPreset: nano
+        portal:
+          resourcesPreset: nano
+        trivy:
+          resourcesPreset: nano
+
