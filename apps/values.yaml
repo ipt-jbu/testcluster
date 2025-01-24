@@ -3,4 +3,5 @@ argocd: { subdomain: argocd }
 registry: { subdomain: reg }
 vault: { subdomain: vault }
 harbor: { subdomain: harbor }
+tekton: { subdomain: tekton }
 cluster: { server: https://kubernetes.default.svc }

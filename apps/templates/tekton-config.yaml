@@ -3,8 +3,6 @@ kind: TektonConfig
 metadata:
   name: config
   namespace: tekton-operator
-  labels:
-    app.kubernetes.io/instance: tekton-operator
 spec:
   profile: all
   targetNamespace: tekton-pipelines
