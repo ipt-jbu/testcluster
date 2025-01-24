@@ -14,20 +14,12 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    repoURL: https://helm.goharbor.io
+    repoURL: https://charts.bitnami.com/bitnami
     chart: harbor
-    targetRevision: 1.16.2
+    targetRevision: 24.1.8
     helm:
       valuesObject:
         expose:
           ingress:
             hosts:
               core: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
-        core:
-          image:
-            repository: bitnami/harbor-core
-            tag: 2.12.2
-        portal:
-          image:
-            repository: bitnami/harbor-portal
-            tag: 2.12.2
