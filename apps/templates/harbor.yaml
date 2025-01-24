@@ -22,6 +22,11 @@ spec:
         clusterDomain: {{ .Values.host }}
         externalURL: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
         exposureType: ingress
+        adminPassword: admin
+        service:
+          type: NodePort
         ingress:
           core:
             hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
+            tls: true
+            selfSigned: true
