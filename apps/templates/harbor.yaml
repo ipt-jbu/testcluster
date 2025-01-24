@@ -19,7 +19,6 @@ spec:
     targetRevision: 24.1.8
     helm:
       valuesObject:
-        expose:
-          ingress:
-            hosts:
-              core: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
+        ingress:
+          core:
+            hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
