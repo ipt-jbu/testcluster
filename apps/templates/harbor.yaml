@@ -19,6 +19,7 @@ spec:
     targetRevision: 24.1.8
     helm:
       valuesObject:
+        adminPassword: Harbor12345
         clusterDomain: {{ .Values.host }}
         externalURL: http://{{ .Values.harbor.subdomain }}.{{ .Values.host }}
         exposureType: ingress
