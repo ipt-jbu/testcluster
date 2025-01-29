@@ -29,6 +29,8 @@ spec:
           core:
             ingressClassName: {{ .Values.ingress.className }}
             hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
+            tls: true
+            selfSigned: true
         core:
           resourcesPreset: nano
         jobservice:
