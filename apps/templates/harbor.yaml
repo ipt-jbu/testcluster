@@ -27,6 +27,7 @@ spec:
           type: ClusterIP
         ingress:
           core:
+            ingressClassName: {{ .Values.ingress.className }}
             hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
         core:
           resourcesPreset: nano

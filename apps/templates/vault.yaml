@@ -24,5 +24,6 @@ spec:
         server:
           ingress:
             enabled: true
+            ingressClassName: {{ .Values.ingress.className }}
             hosts:
               - host: {{ .Values.vault.subdomain }}.{{ .Values.host }}

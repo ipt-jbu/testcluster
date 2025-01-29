@@ -4,6 +4,7 @@ metadata:
   name: tekton-ingress
   namespace: tekton-pipelines
 spec:
+  ingressClassName: {{ .Values.ingress.className }}
   rules:
     - host: {{ .Values.tekton.subdomain }}.{{ .Values.host }}
       http:

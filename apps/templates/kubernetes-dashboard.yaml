@@ -24,4 +24,4 @@ spec:
             enabled: true
             hosts:
             - {{ .Values.kubernetes.subdomain }}.{{ .Values.host }}
-            useDefaultIngressClass: true
+            ingressClassName: {{ .Values.ingress.className }}
