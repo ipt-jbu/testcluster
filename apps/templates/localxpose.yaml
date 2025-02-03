@@ -1,3 +1,17 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: localxpose
+  namespace: default
+spec:
+  encryptedData:
+    ACCESS_TOKEN: AgCNq6NiDt5gfDmN4r+m9L04pYjbgT5S++4wQW4oTatQuvmsG2lUAFDzNmSCkyWqGZ/ZBJ/g8CU0wL5TvoCG/imXZvZyDjAU92dAt1ZpMJkE1qObPq95KF5E6Qk4JqY+QazowabAGiZUrAcGMRFp+dRT0cZRMRd2VxHZ/2Ah882IGyl+Ui9D+TtMyY6CGZhW/W8mBDzMUBAra7EqT19IKnPDZjOSSK01JBZUS3/k55twAmFx0KuS7g3L/1katSUp7lxkrBE6+d+YdxA/mitpEdNbhQvG+9TaKapDH3mVgEZ4AJvqi/FYb/jPaw0bJ/V01h6DdKPcysXJFY89ZyZFQ+08vJd7fqoIppD/VM8D+p2CIVJXIqcOmuswFtTmWE8HTKfhe6Hbv1G3I9jm1UrLpOfP2A2eLkVbBUJTi1wKtpgjQMLozrxMvZRiPb7atOvzsGvvm4YB2aXY4tUi+yvQ4KdKNroFq3W/HUElvw6whNAUPRFdy0G0fnnApwAcatW+JyJvo7RUCNcXLWXleTExyVrTm2aqeB1Cq7Y9bVEEgN9Zhl+EFXnYPvRCwTCCAPR7Zq5FgxxC0ibyL7GoX4bOxhPftadiCI8lsHeFQeqMpjAMG/NnW7otygiei+VLsOxQTgmBd40/lBHFYsF940bK3xbgpqxyDcOSW8lLegXsHudiZOHX6HGWEsa5HXwAPSf1hkwo7JKwHJUliRSKPy2lcvBV0YPAWE5qaAtjpA93ENulD9EDRcKsxmrs
+  template:
+    metadata:
+      creationTimestamp: null
+      name: localxpose
+      namespace: default
+---
 apiVersion: v1
 kind: Pod
 metadata:
@@ -18,7 +32,10 @@ spec:
     - "$(NODE_IP):443"
     env:
     - name: ACCESS_TOKEN
-      value: eRoUmR1YdazxxbObdCkhI1D4lB3KaiJNOLZFSFW4
+      valueFrom:
+        secretKeyRef:
+          name: localxpose
+          key: ACCESS_TOKEN
     - name: NODE_IP
       valueFrom:
         fieldRef:
