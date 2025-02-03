@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     cert-manager.io/cluster-issuer: lets-encrypt
 spec:
-  ingressClassName: public
+  ingressClassName: {{ .Values.ingress.className }}
   rules:
     - host: {{ .Values.argocd.subdomain }}.{{ .Values.host }}
       http:

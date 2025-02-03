@@ -5,4 +5,4 @@ harbor: { subdomain: harbor }
 tekton: { subdomain: tekton }
 kubernetes: { subdomain: kube }
 cluster: { server: https://kubernetes.default.svc }
-ingress: { className: nginx }
+ingress: { className: '' }

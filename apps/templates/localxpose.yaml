@@ -12,6 +12,8 @@ spec:
     - http
     - --reserved-domain
     - '*.vm.japabu.ch'
+    - --to
+    - "$(NODE_IP):80"
     - --https-to
     - "$(NODE_IP):443"
     env:
