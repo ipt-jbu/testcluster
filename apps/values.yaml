@@ -1,6 +1,5 @@
-host: mycluster.local
+host: vm.japabu.ch
 argocd: { subdomain: argocd }
-registry: { subdomain: reg }
 vault: { subdomain: vault }
 harbor: { subdomain: harbor }
 tekton: { subdomain: tekton }

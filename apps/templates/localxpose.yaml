@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: localxpose
+  name: localxpose
+spec:
+  containers:
+  - args:
+    - tunnel
+    - --raw-mode
+    - http
+    - --reserved-domain
+    - '*.vm.japabu.ch'
+    - --https-to
+    - "$(NODE_IP):443"
+    env:
+    - name: ACCESS_TOKEN
+      value: eRoUmR1YdazxxbObdCkhI1D4lB3KaiJNOLZFSFW4
+    - name: NODE_IP
+      valueFrom:
+        fieldRef:
+          fieldPath: status.hostIP
+    image: localxpose/localxpose:latest
+    name: localxpose
+    resources:
+      requests:
+        cpu: 100m
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
