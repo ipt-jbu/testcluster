@@ -30,7 +30,6 @@ spec:
             ingressClassName: {{ .Values.ingress.className }}
             hostname: {{ .Values.harbor.subdomain }}.{{ .Values.host }}
             tls: true
-            selfSigned: true
             annotations:
               ingress.kubernetes.io/ssl-redirect: "true"
               ingress.kubernetes.io/proxy-body-size: "0"
