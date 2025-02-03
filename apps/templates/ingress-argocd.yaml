@@ -9,7 +9,7 @@ metadata:
     cert-manager.io/cluster-issuer: lets-encrypt
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: public
   rules:
     - host: {{ .Values.argocd.subdomain }}.{{ .Values.host }}
       http:
