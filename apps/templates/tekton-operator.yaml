@@ -18,7 +18,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tektoncd/operator.git
-    targetRevision: 9ae359b88c8aab7b63b7d40341c5025338364849
+    targetRevision: HEAD
     path: charts/tekton-operator
     helm:
       valuesObject:

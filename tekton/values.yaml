@@ -1,0 +1,4 @@
+host: vm.japabu.ch
+tekton: { subdomain: tekton }
+cluster: { server: https://kubernetes.default.svc }
+ingress: { className: public }
