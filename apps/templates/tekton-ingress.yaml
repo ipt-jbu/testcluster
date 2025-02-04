@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: tekton-ingress
   namespace: tekton-pipelines
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
@@ -16,3 +18,7 @@ spec:
                 name: tekton-dashboard
                 port:
                   number: 9097
+  tls:
+    - hosts:
+        - {{ .Values.tekton.subdomain }}.{{ .Values.host }}
+      secretName: tekton-server-tls

@@ -27,3 +27,9 @@ spec:
             ingressClassName: {{ .Values.ingress.className }}
             hosts:
               - host: {{ .Values.vault.subdomain }}.{{ .Values.host }}
+            annotations:
+              cert-manager.io/cluster-issuer: lets-encrypt
+            tls:
+              - hosts:
+                  - {{ .Values.vault.subdomain }}.{{ .Values.host }}
+                secretName: vault-server-tls
