@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tekton-resources
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  destination:
+    server: {{ .Values.cluster.server }}
+    namespace: tekton-resources
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+  project: default
+  source:
+    repoURL: https://github.com/ipt-jbu/testcluster.git
+    path: tekton-resources
+    targetRevision: HEAD
