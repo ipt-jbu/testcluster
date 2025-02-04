@@ -1,17 +1,18 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: quarkus
+  name: clone-build-push
 spec:
   description: |
-    This pipeline clones a git repo, then builds it and pushes the image.
+    This pipeline clones a git repo, builds a Docker image with Kaniko and
+    pushes it to a registry
   params:
     - name: repo-url
       type: string
-      description: The git repo URL to clone from.
+    - name: image-reference
+      type: string
   workspaces:
     - name: shared-data
-    - name: maven-local-m2
   tasks:
     - name: fetch-source
       taskRef:
@@ -22,18 +23,13 @@ spec:
       params:
         - name: url
           value: $(params.repo-url)
-    - name: build-and-push
+    - name: build-push
       runAfter: ["fetch-source"]
       taskRef:
-        name: maven
+        name: kaniko
       workspaces:
         - name: source
           workspace: shared-data
-        - name: maven-local-repo
-          workspace: maven-local-m2
       params:
-        - name: GOALS
-          value:
-            - build
-            - -Dquarkus.container-image.push=true
-            - -Dquarkus.container-image.registry={{ .Values.registry }}
+        - name: IMAGE
+          value: $(params.image-reference)
