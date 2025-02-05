@@ -13,6 +13,7 @@ spec:
       type: string
   workspaces:
     - name: shared-data
+    - name: maven-local-m2
   tasks:
     - name: fetch-source
       taskRef:
@@ -23,8 +24,22 @@ spec:
       params:
         - name: url
           value: $(params.repo-url)
-    - name: build-push
+    - name: build-quarkus
       runAfter: ["fetch-source"]
+      taskRef:
+        name: maven
+      workspaces:
+        - name: source
+          workspace: shared-data
+        - name: maven-local-repo
+          workspace: maven-local-m2
+      params:
+        - name: GOALS
+          value:
+            - package
+            - -Dnative
+    - name: build-oci-push
+      runAfter: ["build-quarkus"]
       taskRef:
         name: kaniko
       workspaces:
@@ -33,3 +48,5 @@ spec:
       params:
         - name: IMAGE
           value: $(params.image-reference)
+        - name: DOCKERFILE
+          value: src/main/docker/Dockerfile.native

@@ -19,6 +19,9 @@ spec:
           resources:
             requests:
               storage: 1Gi
+    - name: maven-local-m2
+      persistentVolumeClaim:
+        claimName: maven-local-m2-pvc
   params:
     - name: repo-url
       value: https://github.com/ipt-jbu/testapp.git
