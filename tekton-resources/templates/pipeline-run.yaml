@@ -19,6 +19,8 @@ spec:
           resources:
             requests:
               storage: 1Gi
+    - name: maven-settings
+      emptyDir: {}
     - name: maven-local-m2
       persistentVolumeClaim:
         claimName: maven-local-m2-pvc

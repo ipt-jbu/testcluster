@@ -13,6 +13,7 @@ spec:
       type: string
   workspaces:
     - name: shared-data
+    - name: maven-settings
     - name: maven-local-m2
   tasks:
     - name: fetch-source
@@ -31,6 +32,8 @@ spec:
       workspaces:
         - name: source
           workspace: shared-data
+        - name: maven-settings
+          workspace: maven-settings
         - name: maven-local-repo
           workspace: maven-local-m2
       params:
