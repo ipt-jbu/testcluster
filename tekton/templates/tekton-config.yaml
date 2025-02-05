@@ -5,3 +5,5 @@ metadata:
 spec:
   profile: all
   targetNamespace: tekton
+  pipeline:
+    disable-affinity-assistant: true
