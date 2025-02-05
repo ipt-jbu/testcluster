@@ -37,6 +37,8 @@ spec:
         - name: maven-local-repo
           workspace: maven-local-m2
       params:
+        - name: MAVEN_IMAGE
+          value: quay.io/quarkus/ubi8-quarkus-mandrel-builder-image:jdk-21
         - name: GOALS
           value:
             - package
