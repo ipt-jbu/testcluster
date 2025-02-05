@@ -15,6 +15,7 @@ spec:
     - name: shared-data
     - name: maven-settings
     - name: maven-local-m2
+    - name: docker-config
   tasks:
     - name: fetch-source
       taskRef:
