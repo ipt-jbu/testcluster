@@ -24,6 +24,9 @@ spec:
     - name: maven-local-m2
       persistentVolumeClaim:
         claimName: maven-local-m2-pvc
+    - name: docker-config
+      secret:
+        secretName: docker-config
   params:
     - name: repo-url
       value: https://github.com/ipt-jbu/testapp.git
