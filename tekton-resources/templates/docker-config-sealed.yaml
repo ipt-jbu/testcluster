@@ -1,0 +1,12 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: docker-config
+  namespace: default
+spec:
+  encryptedData:
+    config.json: AgB997AHfcwWA+xhcxwzLeoK8Wrv1HlDV7MmR1mVUqi+1To+P9on1Isf/UVp8/cSTIx0MnHIZY7EhpNT/UwOVlLkf/Visx7gxyslv+vTX1p20nfWZZ8eeiR4k13ztlZ15rzhwjkGI+hf3OIZUL9H2HngaMZbEqeJI15p7pifreD47jzlmW0IudSiHV7lzq5covGtOeMlDUaGfCSl7eA4qRUBzr8Fs+chXuQC2zIA2GVeBk+6Sxi0hdSICDlJ5MAZlO00w2DXCgvEDr80rKvVh9Rx0dws+O8B1qKR9hlbMLMIqQBoU+wfLW9iagvqpZrqnA30e/Qt5aoX5dK+YcQKIwHhjvWZN3uhGrSe9Myi4dA1qmgXUK6Q/KhqXSTpaQKedHA7Ly2F0k7DyDR+zdoB5PCb98F5p4Z51Y6jlsvTuv+4rozpSXX21ytR9IoydHYH5i31xG/wWzYgZEJEdt5G/VXAAkMHg5csAvQUP6S3KqZOrC7CfFEaPcWxdWSCIRbplcHeAkjKTG3hclxio4Z6a7JWGZMBqT2lmsBECW85PFVJ14pcJ0ONayWAanVbtL/82muNWWjrb+/Ks38h70SIc88/4uMTLNpBVgP7to/FOaMyk5QhheT+ouWs9DIWjeHOhjI5sf8G/YWCCrbZaBSJR0cqYie/e3NpnA528lfiW6+tJg8+xIlNq7nGrbUef5mSFz7XsqpAIQ+wTEpPsfJChGk/K3or6zBJ53Y8+8hHlhT3N5pqhWeBLe1JuAxvOa+jH09BE6Zf44eGAehnZd/TB9rtvcqdalWtAcqMsCuc3pDDrBhOa9LlMA4Lhsb0ntsFG0W6XS26kfeuCMBpTaznNQNJjGuoPjVkFaWG
+  template:
+    metadata:
+      name: docker-config
+      namespace: default

@@ -50,6 +50,9 @@ spec:
       workspaces:
         - name: source
           workspace: shared-data
+        - name: dockerconfig
+          secret:
+            secretName: docker-config
       params:
         - name: IMAGE
           value: $(params.image-reference)
